@@ -1,0 +1,49 @@
+# Compiled binaries
+*.exe
+*.out
+*.app
+*.dll
+*.so
+*.dylib
+
+# Object and build files
+*.o
+*.obj
+*.a
+*.lib
+*.class
+build/
+Build/
+debug/
+Debug/
+release/
+Release/
+
+# Program output and temporary files
+output/
+*.log
+*.tmp
+*.temp
+output.txt
+
+# VS Code and editor metadata
+.vscode/
+.idea/
+*.code-workspace
+
+# OS generated files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# C/C++ cache and tooling files
+.cache/
+compile_commands.json
+CMakeFiles/
+CMakeCache.txt
+cmake-build-*/
+
+# GitHub/online judge local helper files
+input.txt
+expected.txt
+actual.txt
