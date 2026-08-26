@@ -15,7 +15,7 @@ int main()
     cout<<"Enter the value of k :";
     cin>>k;
 
-    while (k <= 0 || k >= n - 1) {
+    while (k <= 0 || k >= n) {
     cout << "Invalid k. Enter again: ";
     cin >> k;
     }
