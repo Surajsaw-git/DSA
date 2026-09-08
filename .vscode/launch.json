@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "d:/PROGRAMING LANGUAGE/DSA_A2Z/DAA",
-      "program": "d:/PROGRAMING LANGUAGE/DSA_A2Z/DAA/build/Debug/outDebug",
+      "cwd": "d:/PROGRAMING LANGUAGE/DSA_A2Z/CPP",
+      "program": "d:/PROGRAMING LANGUAGE/DSA_A2Z/CPP/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [

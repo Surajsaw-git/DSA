@@ -14,17 +14,23 @@ cout<<endl;
 int temp =arr[0];
 int second_max=arr[0];
 
-for(i =1; i<arr.size();i++)
+for(int i =1; i<arr.size();i++)
 {
     if( temp<arr[i]){
         second_max=temp;
         temp = arr[i];
     }
-    else if(second_max < arr[i] && arr[i] < temp)
+    // else if(second_max < arr[i] && arr[i] < temp)
+    // {
+    //     second_max = arr[i];
+
+    // }
+    else if (arr[i] > second_max && arr[i] < temp)
     {
         second_max = arr[i];
 
     }
+
     
 
 }
