@@ -4,7 +4,7 @@
 using namespace std;
 
 
-
+// Structure for storing an edge
 struct Edge
 {
     int u;
@@ -12,6 +12,8 @@ struct Edge
     int weight;
 };
 
+
+// Find the representative of a set
 int findParent(vector<int>& parent, int x)
 {
     if (parent[x] == x)
@@ -22,6 +24,8 @@ int findParent(vector<int>& parent, int x)
     return parent[x] = findParent(parent, parent[x]);
 }
 
+
+// Join two sets
 void unionSet(vector<int>& parent,
               vector<int>& rank,
               int u, int v)
@@ -29,12 +33,15 @@ void unionSet(vector<int>& parent,
     int parentU = findParent(parent, u);
     int parentV = findParent(parent, v);
 
-    
+    // If both have same parent,
+    // they are already connected
     if (parentU == parentV)
     {
         return;
     }
 
+    // Attach smaller rank tree
+    // under larger rank tree
     if (rank[parentU] < rank[parentV])
     {
         parent[parentU] = parentV;
@@ -55,7 +62,7 @@ int main()
 {
     int V = 9;
 
-    
+    // Adjacency Matrix
     int graph[V][V] =
     {
         //  0   1   2   3   4   5   6   7   8
@@ -71,10 +78,10 @@ int main()
     };
 
 
-    
+    // Store all edges
     vector<Edge> edges;
 
-    
+    // Extract edges from adjacency matrix
     for (int i = 0; i < V; i++)
     {
         for (int j = i + 1; j < V; j++)
@@ -91,44 +98,57 @@ int main()
             }
         }
     }
+
+
+    // Sort edges according to weight
     sort(edges.begin(), edges.end(),
          [](Edge a, Edge b)
          {
              return a.weight < b.weight;
          });
 
+
+    // DSU arrays
     vector<int> parent(V);
     vector<int> rank(V, 0);
 
+
+    // Initially every vertex is its own parent
     for (int i = 0; i < V; i++)
     {
         parent[i] = i;
     }
 
 
+    // Store MST edges
     vector<Edge> MST;
 
     int totalWeight = 0;
 
 
+    // Process edges in sorted order
     for (Edge edge : edges)
     {
         int u = edge.u;
         int v = edge.v;
 
+        // Check whether adding this edge
+        // creates a cycle
         int parentU = findParent(parent, u);
         int parentV = findParent(parent, v);
 
         if (parentU != parentV)
         {
-            
+            // No cycle, so add edge
             MST.push_back(edge);
 
             totalWeight += edge.weight;
 
+            // Join the two sets
             unionSet(parent, rank, u, v);
         }
 
+        // MST needs V-1 edges
         if (MST.size() == V - 1)
         {
             break;
@@ -136,7 +156,7 @@ int main()
     }
 
 
-
+    // Print MST
     cout << "Edges in Minimum Spanning Tree:\n";
     cout << "Edge\tWeight\n";
 
