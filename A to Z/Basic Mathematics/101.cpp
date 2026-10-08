@@ -27,15 +27,38 @@ class reverse
     void returnreverse(int n)
     {
         int b=0;
-        while (n>0)
+        if (n>0)
         {
-            b=b*10;
-            int a = n%10;
-            n = n-a;
-            n = n/10;
-            b=b+a;
+            while (n>0)
+            {
+                b=b*10;
+                int a = n%10;
+                n = n-a;
+                n = n/10;
+                b=b+a;
+            }
+            cout<<b;
         }
-        cout<<b;
+        else if (n<0)
+        {
+            n=n*(-1);
+            while (n>0)
+            {
+                b=b*10;
+                int a = n%10;
+                n = n-a;
+                n = n/10;
+                b=b+a;
+            }
+            b=b*(-1);
+            cout<<b;
+        }
+        else
+        {
+            cout<<0;
+        }
+        
+        
         
     }
 

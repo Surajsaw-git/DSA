@@ -31,22 +31,52 @@ class palindrome
     {
         int b=0;
         int c=n;
-        while (n>0)
+        if (n>0)
         {
-            b=b*10;
-            int a = n%10;
-            n = n-a;
-            n = n/10;
-            b=b+a;
+            while (n>0)
+            {
+                b=b*10;
+                int a = n%10;
+                n = n/10;
+                b=b+a;
+            }
+            if(b==c)
+            {
+                cout<<"it is palindrome";
+            }
+            else
+            {
+                cout<<"it is not a palindrome";
+            }
         }
-        if (b==c)
+        else if (n<0)
         {
-            cout<<"it is palindrome";
+            n = n*(-1);
+            while (n>0)
+            {
+                b=b*10;
+                int a = n%10;
+                n = n/10;
+                b=b+a;
+            }
+            b=b*(-1);
+            
+            if(b==c)
+            {
+                cout<<"it is palindrome";
+            }
+            else
+            {
+                cout<<"it is not a palindrome";
+            }
         }
         else
         {
             cout<<"it is not a palindrome";
         }
+        
+        
+        
         
         
     }
