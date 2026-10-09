@@ -24,34 +24,32 @@ class Prime_num
     public:
     void returnprime(int n)
     {
-        int count=0;
-        if (n>2)
+        //your code goes here
+        if (n <= 1)
         {
-            for (int i = 1; i <= n; i++)
-            {
-                if (n%i==0)
-                {
-                    count++;
-                }
-                
-            }
-            if (count!=2)
-            {
-                cout<<"Not prime"<<endl;
-            }
-            else
-            {
-                cout<<"prime"<<endl;
-            }
-            
+            //return false;
+            cout<<"Not Prime number";
         }
-        else if (1<=n<=2)
+
+        int count = 0;
+
+        for (int i = 1; i <= n; i++)
         {
-            cout<<"prime";
+            if (n % i == 0)
+            {
+                count++;
+            }
+        }
+
+        if (count == 2)
+        {
+            //return true;
+            cout<<"Prime number";
         }
         else
         {
-            cout<<"not prime";
+            //return false;
+            cout<<"Not Prime number";
         }
         
         
