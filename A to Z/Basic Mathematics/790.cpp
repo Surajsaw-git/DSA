@@ -25,10 +25,8 @@ class Prime_num
     public:
     void returnprime(int n)
     {
-        //your code goes here
         if (n <= 1)
         {
-            //return false;
             cout<<0;
         }
 
@@ -48,14 +46,7 @@ class Prime_num
 
             if (count == 2)
             {
-                //return true;
-                //cout<<"Prime number";
                 primecount++;
-            }
-            else
-            {
-                //return false;
-                //cout<<"Not Prime number";
             }
         }
         cout<<primecount;
